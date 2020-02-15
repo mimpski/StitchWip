@@ -1,7 +1,8 @@
 <?php
 
 namespace App;
-
+use App\Project;
+use App\Thread;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -36,4 +37,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function projects(){
+        return $this->hasMany(Project::class);
+    }
+    public function threads(){
+        return $this->belongsToMany(Thread::class, 'users_threads');
+    }
 }

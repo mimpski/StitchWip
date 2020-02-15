@@ -14,3 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/profile/{name}', 'UserController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+/** projects **/
+Route::get('/profile/{name}/projects', 'ProjectController@index');
+Route::get('/project','ProjectController@add');
+Route::post('/project','ProjectController@create');
+Route::get('/project/{project}','ProjectController@edit');
+Route::post('/project/{project}','ProjectController@update');
+
+/** threads **/
+Route::get('/profile/{name}/threads', 'ThreadController@index')->middleware('auth');
+Route::post('/thread/update','ThreadController@update')->middleware('auth');
