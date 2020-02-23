@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use File; 
+use Image;
 
 class RegisterController extends Controller
 {
@@ -52,7 +54,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -66,10 +68,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // generate a random number and use it to grab an adorable avatar!
+        $avatar_id = rand(0, 6000);
+        $path = public_path().'/images/users/' . $data['name'].'/';
+        File::makeDirectory($path, $mode = 0777, true, true); 
+        copy('https://api.adorable.io/avatars/'.$avatar_id, $path .'/avatar.png');
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
     }
+
+
 }

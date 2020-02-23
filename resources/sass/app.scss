@@ -1,15 +1,17 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'variables';
+// @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
 
-@import 'bootswatch';
+// @import 'bootswatch';
 
+@import 'main.css';
 
+@import 'page_backgrounds';
 
 .card {
     padding-top: 20px;
@@ -261,4 +263,44 @@
 .thread_info input {
     margin-left: 10px;
     padding: 0 5px;
+}
+
+.body_welcome_logged_out header{
+    display: none;
+}
+.blog-listing {
+    background-color:  white;
+    padding: 3em 3em;
+}
+.blog-post {
+    margin-bottom: 40px;
+    border-bottom: solid 1px gainsboro;
+    padding-bottom: 40px;
+}
+.fixed-button{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0 0;
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0.8);
+}
+.generate-author-thumb {
+    width: 100%;
+    text-align: center;
+    display:block;
+}
+.generate-author-thumb img {
+    height: 200px;
+    margin: 20px auto;
+    border: solid 5px green;
+    border-radius: 200px;
+}
+.widget-profile-pic {
+    max-width: 40%;
+}
+
+#chatter_hero{
+    background-image:none!important;
 }

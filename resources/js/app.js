@@ -13,3 +13,12 @@ require('./bootstrap');
  */
 
 require('./components/Example');
+
+$('#generate-new-profile').click( function(){
+    $(this).prop('disabled', true);
+    console.log('here');
+    var rand = Math.floor(Math.random() * 5000) + 1;
+    $('.generate-author-thumb img').attr('src', 'https://api.adorable.io/avatars/' + rand);
+    $(this).prop('disabled', false);
+    $('.new_profile_val').val(rand);
+});

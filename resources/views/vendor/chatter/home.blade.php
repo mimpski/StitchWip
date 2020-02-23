@@ -19,11 +19,10 @@
 
 <div id="chatter" class="chatter_home">
 
-	<div id="chatter_hero">
-		<div id="chatter_hero_dimmer"></div>
+	<div id="chatter_hero" class="purple_gradient">
 		<?php $headline_logo = Config::get('chatter.headline_logo'); ?>
-			<h1>WELCOME TO FORUMS</h1>
-			<p>Stay friendly and supportive of each other</p>
+			<h1>WELCOME TO THE FORUMS</h1>
+			<p>Stay friendly and be supportive of each other</p>
 	</div>
 
 	@if(config('chatter.errors'))

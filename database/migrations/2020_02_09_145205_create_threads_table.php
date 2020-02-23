@@ -17,9 +17,9 @@ class CreateThreadsTable extends Migration
             $table->bigIncrements('id');
             $table->string('thread_no');
             $table->string('name');
-            $table->string('red');
-            $table->string('green');
-            $table->string('blue');
+            $table->string('red')->nullable();
+            $table->string('green')->nullable();
+            $table->string('blue')->nullable();
             $table->timestamps();
         });
     }

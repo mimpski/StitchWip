@@ -20,8 +20,8 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->string('source');
             $table->string('status');
-            $table->date('started')->nullable();;
-            $table->date('finished')->nullable();;
+            $table->date('started')->nullable();
+            $table->date('finished')->nullable();
         });
     }
 

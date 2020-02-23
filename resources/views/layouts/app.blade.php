@@ -14,13 +14,27 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="/Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="/Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/Bootstrap/dist/css/bootstrap-grid.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="{{ !empty($body_class) ? $body_class : '' }}">
     <div id="app">
+        @include('includes.site-header')
+            <div class="header-spacer"></div>
+       {{-- @if (Auth::check()) 
         <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -77,10 +91,11 @@
                 </div>
             </div>
         </nav>
-
+        @endif --}}
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    @include('includes.site-footer');
 </body>
 </html>
