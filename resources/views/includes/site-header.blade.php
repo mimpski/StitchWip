@@ -12,6 +12,9 @@
                         <li class="nav-item">
                             <a href="/superadmin" class="nav-link">Dashboard</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/superadmin/users" class="nav-link">Users</a>
+                        </li>
                     </ul>
                 </div>
             </div>

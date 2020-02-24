@@ -43,3 +43,6 @@ Route::get('/behind-the-scenes/{slug}', 'DevBlogController@post');
 
 /** Admin area **/
 Route::get('/superadmin', 'SuperAdminController@index')->middleware(['auth', 'superadmin']);
+Route::get('/superadmin/users', 'SuperAdminController@users')->middleware(['auth', 'superadmin']);
+Route::post('/superadmin/users/delete', 'SuperAdminController@deleteUser')->middleware(['auth', 'superadmin']);
+Route::post('/superadmin/users/update', 'SuperAdminController@updateUser')->middleware(['auth', 'superadmin']);

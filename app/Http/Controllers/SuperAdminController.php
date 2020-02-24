@@ -24,4 +24,33 @@ class SuperAdminController extends Controller
         return view('super_admin.dashboard', compact('body_class','user', 'user_total', 'weeks_users', 'todays_users', 'todays_logins'));
     }
 
+    public function users()
+    {
+        $this->middleware('superadmin');
+        $user = Auth()->user();
+        $body_class = 'superadmin';
+        $users = DB::table('users')->get();
+        //dd($users);
+        return view('super_admin.users', compact('body_class','users'));
+    }
+
+    public function deleteUser(Request $request)
+    {
+        $this->middleware('superadmin');
+        DB::table('users')->delete($request->delete_user_id);
+        DB::table('projects')->where('user_id', $request->delete_user_id)->delete();
+        $body_class = 'superadmin';
+        $users = DB::table('users')->get();
+        return view('super_admin.users', compact('body_class','users'));
+    }
+
+    public function updateUser(Request $request)
+    {
+        $this->middleware('superadmin');
+        DB::table('users')->where('id', $request->update_user_id)->update(['role' => $request->role]);
+        $body_class = 'superadmin';
+        $users = DB::table('users')->get();
+        return view('super_admin.users', compact('body_class','users'));
+    }
+
 }

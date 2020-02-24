@@ -68901,6 +68901,16 @@ $('#generate-new-profile').click(function () {
   $(this).prop('disabled', false);
   $('.new_profile_val').val(rand);
 });
+$('.delete_user_popup').click(function () {
+  var userId = $(this).attr('data-userid');
+  $('.delete_user_id').val(userId);
+  console.log('clicked ' + userId);
+});
+$('.update_user_popup').click(function () {
+  var userId = $(this).attr('data-userid');
+  $('.update_user_id').val(userId);
+  console.log('clicked ' + userId);
+});
 
 /***/ }),
 

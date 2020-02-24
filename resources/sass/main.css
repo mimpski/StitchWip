@@ -12624,6 +12624,13 @@ hr.fc-divider {
   border-style: double;
   /* overcome neighboring borders */ }
 
+  table .btn{
+    margin-bottom: 0;
+  }
+  .table td, .table th{
+    vertical-align: middle!important;
+  }
+
 /* Internal Nav Links
 --------------------------------------------------------------------------------------------------*/
 a[data-goto] {
