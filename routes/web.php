@@ -40,3 +40,6 @@ Route::post('/thread/update','ThreadController@update')->middleware('auth');
 /** web dev blog **/
 Route::get('/behind-the-scenes', 'DevBlogController@index');
 Route::get('/behind-the-scenes/{slug}', 'DevBlogController@post');
+
+/** Admin area **/
+Route::get('/superadmin', 'SuperAdminController@index')->middleware(['auth', 'superadmin']);

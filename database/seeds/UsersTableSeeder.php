@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class UsersTableSeeder extends Seeder
 {
@@ -16,6 +17,8 @@ class UsersTableSeeder extends Seeder
             'name' => 'mimpski',
             'email' => 'mimpski@hotmail.com',
             'password' => Hash::make('Panic13!'),
+            'role' => 'superadmin',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
                 // generate a random number and use it to grab an adorable avatar!
                 $avatar_id = rand(0, 6000);

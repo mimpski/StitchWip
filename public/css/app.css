@@ -142,11 +142,25 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 .header {
   height: 70px;
   background-color: #3f4257;
-  position: fixed;
+  /* position: fixed; */
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
   z-index: 21; }
+  .superadmin-header{
+    background-color: #FF512F !important;
+  }
+  .header.superadmin-header .page-title{
+    margin-top: 12px;
+  }
+  .header.superadmin-header .header-menu{
+    background-color: transparent;
+  }
+  .superadmin-header a, 
+  .superadmin-header p{
+    color: white!important;
+  }
   .header .page-title {
     padding: 0;
     text-transform: uppercase;
@@ -15927,6 +15941,7 @@ Build date: 2018-12-12 00:07:25
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.superadmin,
 .purple_gradient {
   background: #1D2B64;
   /* fallback for old browsers */

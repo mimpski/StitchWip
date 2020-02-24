@@ -1,3 +1,25 @@
+@if(Auth::user()['role']=='superadmin')
+<header class="header header--standard-dark superadmin-header">
+    <div class="container">
+        <div class="row">
+        <div class="header-content-wrapper">
+            <div class="page-title">
+            <h2>Welcome SuperAdmin!</h2>
+            </div>
+            <div class="nav nav-pills nav1 header-menu">
+                <div class="mCustomScrollbar ps ps--theme_default ps--active-y" style="overflow: visible!important">
+                    <ul>
+                        <li class="nav-item">
+                            <a href="/superadmin" class="nav-link">Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</header>
+@endif
 <header class="header header--standard-dark" id="site-header">
     <div class="container">
         <div class="row">
