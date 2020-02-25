@@ -15,6 +15,9 @@
                         <li class="nav-item">
                             <a href="/superadmin/users" class="nav-link">Users</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/superadmin/news" class="nav-link">Site News</a>
+                        </li>
                     </ul>
                 </div>
             </div>

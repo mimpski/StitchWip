@@ -68911,6 +68911,17 @@ $('.update_user_popup').click(function () {
   $('.update_user_id').val(userId);
   console.log('clicked ' + userId);
 });
+$('.publish_post_popup').click(function () {
+  var postId = $(this).attr('data-newsid');
+  $('.update_post_id').val(postId);
+  console.log('clicked ' + postId);
+});
+$('.delete_post_popup').click(function () {
+  var postId = $(this).attr('data-newsid');
+  $('.delete_news_id').val(postId);
+  console.log('clicked ' + postId);
+});
+$('#editor').summernote();
 
 /***/ }),
 

@@ -46,3 +46,10 @@ Route::get('/superadmin', 'SuperAdminController@index')->middleware(['auth', 'su
 Route::get('/superadmin/users', 'SuperAdminController@users')->middleware(['auth', 'superadmin']);
 Route::post('/superadmin/users/delete', 'SuperAdminController@deleteUser')->middleware(['auth', 'superadmin']);
 Route::post('/superadmin/users/update', 'SuperAdminController@updateUser')->middleware(['auth', 'superadmin']);
+Route::get('/superadmin/news', 'SuperAdminController@news')->middleware(['auth', 'superadmin']);
+Route::post('/superadmin/news/publish','SuperAdminController@publishNews')->middleware(['auth', 'superadmin']);
+Route::post('/superadmin/news/delete','SuperAdminController@deleteNews')->middleware(['auth', 'superadmin']);
+Route::get('/superadmin/news/new','SuperAdminController@addNews')->middleware(['auth', 'superadmin']);
+Route::get('/superadmin/news/{id}/edit','SuperAdminController@editNews')->middleware(['auth', 'superadmin']);
+Route::post('/superadmin/news/save','SuperAdminController@createNews')->middleware(['auth', 'superadmin']);
+Route::post('/superadmin/news/{id}/update','SuperAdminController@updateNews')->middleware(['auth', 'superadmin']);

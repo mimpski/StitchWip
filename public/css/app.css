@@ -16245,7 +16245,9 @@ Build date: 2018-12-12 00:07:25
 
 .widget-profile-pic,
 .delete-user,
-.update-user {
+.update-user,
+.delete-post,
+.update-post {
   max-width: 40%;
 }
 
