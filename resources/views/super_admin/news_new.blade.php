@@ -8,6 +8,16 @@
             <center>
                 <h1>Create a news post</h1>
             </center>
+            @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+                </ul>
+            </div>
+            @endif
             <form action="/superadmin/news/save" method="post"/>
             <br/><br/>
             <div class="row">
@@ -45,7 +55,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="header_image">Header Image:</label>
-                        <input type="text" class="form-control" name="header_image">
+                        <input type="file" class="form-control" name="header_image">
                     </div>
                 </div>
             </div>

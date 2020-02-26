@@ -91,6 +91,19 @@ class SuperAdminController extends Controller
     public function createNews(Request $request)
     {
       //  dd($request);
+        // $this->validate($request, [
+        //     'header_image' => 'image|mimes:jpeg,png,jpg,gif'
+        // ]);
+        if($request->hasfile('header_file'))
+         {
+
+            foreach($request->file('header_file') as $image)
+            {
+                $name=$image->getClientOriginalName();
+                $image->move(public_path().'/images/news/', $name);  
+                dd($name);
+            }
+         }
         $this->middleware('superadmin');
         $body_class = 'superadmin';
         $post = new NewsPost();
@@ -98,7 +111,7 @@ class SuperAdminController extends Controller
         $post->slug = Str::slug($request->title);
         $post->content = $request->main_content;
         $post->seo_description = $request->seo_description;
-        $post->header_image = $request->header_image;
+        $post->header_image = $name;
         $post->status = $request->status;
     	$post->author = $request->author;
         $post->save();
