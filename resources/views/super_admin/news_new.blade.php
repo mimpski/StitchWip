@@ -20,7 +20,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="slug">Slug:</label>
-                        <input type="text" name="slug" class="form-control">
+                        <input type="text" name="slug" disabled class="form-control" placeholder="This will autofill">
                     </div>
                 </div>
             </div>

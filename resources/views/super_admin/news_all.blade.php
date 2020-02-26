@@ -19,7 +19,7 @@
                         <td></td>
                         <td></td>
                         <td>
-                            <a href="/superadmin/news/add" class="btn btn-primary pull-right">Create New</a>
+                            <a href="/superadmin/news/new" class="btn btn-primary pull-right">Create New</a>
                         </td>
                     </tr>
                     @foreach($news as $post)

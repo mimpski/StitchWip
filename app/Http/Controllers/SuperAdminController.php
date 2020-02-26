@@ -8,6 +8,7 @@ use App\NewsPost;
 use DateTime;
 use DB;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class SuperAdminController extends Controller
@@ -94,7 +95,7 @@ class SuperAdminController extends Controller
         $body_class = 'superadmin';
         $post = new NewsPost();
         $post->title = $request->title;
-        $post->slug = $request->slug;
+        $post->slug = Str::slug($request->title);
         $post->content = $request->main_content;
         $post->seo_description = $request->seo_description;
         $post->header_image = $request->header_image;
