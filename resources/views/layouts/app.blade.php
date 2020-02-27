@@ -96,6 +96,6 @@
             @yield('content')
         </main>
     </div>
-    @include('includes.site-footer');
+    @include('includes.site-footer')
 </body>
 </html>
