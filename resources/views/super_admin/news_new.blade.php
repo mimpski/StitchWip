@@ -46,16 +46,22 @@
             </div>
             <br/><br/>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="form-group">
                         <label for="description">SEO Description:</label>
                         <input type="text" class="form-control" name="seo_description">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Image Viewer:</label><br/><br/>
+                        <a href="#" data-path="/superadmin/image/show" class="view_images_popup btn btn-grey-light col-sm-12" data-toggle="modal" data-target="#image_library">Image Library</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
                     <div class="form-group">
                         <label for="header_image">Header Image:</label>
-                        <input type="file" class="form-control" name="header_image">
+                        <input type="text" class="form-control" name="header_image" placeholder="/images/news/">
                     </div>
                 </div>
             </div>
@@ -83,14 +89,21 @@
                 </div>
             </div>
             {{ csrf_field() }}
-
             </form>
-            
-
-            
         </div>
     </div>
 </div>
 
+<div class="modal fade" id="image_library" tabindex="-1" role="dialog" aria-labelledby="image_library" aria-modal="true">
+	<div class="modal-dialog window-popup image_library" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+                <center><h1>Image viewer</h1></center>
+                <div class="viewer-container">
+                </div>
+		    </div>
+		</div>
+	</div>
+</div>
 
 @endsection

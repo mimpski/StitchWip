@@ -53,3 +53,8 @@ Route::get('/superadmin/news/new','SuperAdminController@addNews')->middleware(['
 Route::get('/superadmin/news/{id}/edit','SuperAdminController@editNews')->middleware(['auth', 'superadmin']);
 Route::post('/superadmin/news/save','SuperAdminController@createNews')->middleware(['auth', 'superadmin']);
 Route::post('/superadmin/news/{id}/update','SuperAdminController@updateNews')->middleware(['auth', 'superadmin']);
+
+/** Images **/
+Route::get('/superadmin/image/uploader', 'ImageController@superadminIndex')->middleware(['auth', 'superadmin']);
+Route::post('/superadmin/image/save', 'ImageController@superadminSave')->middleware(['auth', 'superadmin']);
+Route::get('/superadmin/image/show', 'ImageController@superadminShow')->middleware(['auth', 'superadmin']);

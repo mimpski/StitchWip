@@ -47,3 +47,14 @@ $('.delete_post_popup').click( function(){
     console.log('clicked ' + postId);
 });
 
+$('.view_images_popup').click(function(){
+
+    $.ajax({
+        type : 'GET',
+        url : $(this).data('path'),
+
+        success: function(result) {
+            $('.viewer-container').html(result);
+        }
+    });
+});

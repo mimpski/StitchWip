@@ -18,6 +18,9 @@
                         <li class="nav-item">
                             <a href="/superadmin/news" class="nav-link">Site News</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/superadmin/image/uploader" class="nav-link">Image Uploader</a>
+                        </li>
                     </ul>
                 </div>
             </div>

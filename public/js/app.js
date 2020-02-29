@@ -68921,7 +68921,15 @@ $('.delete_post_popup').click(function () {
   $('.delete_news_id').val(postId);
   console.log('clicked ' + postId);
 });
-$('#editor').summernote();
+$('.view_images_popup').click(function () {
+  $.ajax({
+    type: 'GET',
+    url: $(this).data('path'),
+    success: function success(result) {
+      $('.viewer-container').html(result);
+    }
+  });
+});
 
 /***/ }),
 
